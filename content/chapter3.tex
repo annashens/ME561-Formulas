@@ -1,0 +1,59 @@
+\sectiontitle{Chapter 3}
+\header{Energy}
+\begin{align*}
+    E_{total} &= PE + KE =  \underbrace{\frac{1}{2}mv^2}_{KE} + \overbrace{mgZ}^{PE_{elev}} + \underbrace{mg\frac{p}{\gamma}}_{PE_{pres}}
+\end{align*}
+\header{Power}
+\begin{align*}
+    power = \frac{F \cdot d}{t}=Fv
+\end{align*} 
+\begin{conditions}
+    F & force, $\units{lbf}$\\
+    d & distance $\units{in,\ ft}$\\
+    t & time $\units{s}$\\
+    v & velocity $\units{\frac{in}{s},\ \frac{ft}{s}}$
+\end{conditions}
+\header{Horsepower}
+Linear
+\begin{equation*}
+    HP = \frac{F\units{lb}\times v\units{\frac{ft}{s}}}{550}=\frac{F\units{lb}\times v\units{\frac{ft}{min}}}{33,000}
+\end{equation*}
+Angular
+\begin{equation*}
+    HP = \frac{T\units{in\cdot lb} \times N \units{rpm}}{63,000}
+\end{equation*}
+Hydraulic
+\begin{equation*}
+    HHP = \frac{2\units{\frac{lb}{ft^2}}\times Q\units{\frac{ft^3}{s}}}{550} = \frac{P\units{psi}\times Q\units{gpm}}{1714}=\frac{\text{pump hydraulic power }\units{W}}{\gamma\units{\frac{N}{m^3}}\times Q\units{\frac{m^3}{s}}}
+\end{equation*}
+\header{Pascal's Law}
+Pressure applied to a confined fluid is transmitted undiminished in all directions throughout the fluid and acts perpendicular to the surfaces in contact with the fluid
+\begin{align*}
+    \frac{F_1}{A_1}=\frac{F_2}{A_2}
+\end{align*}
+\header{Continuity Equation}
+For steady flow in a pipeline, the weight flow rate is the same for all locations of the pipe.\
+\begin{align*}
+    \dot{w}_1 &= \dot{w}_2\\
+    \gamma_1 A_1 v_1 &= \gamma_2 A_2 v_2\\
+\end{align*}
+If $\rho_1=\rho_2$ or $\gamma_1=\gamma_2$, then $A_1 v_1 = A_2v_2 = Q$
+\begin{align*}
+    Q_1 = A_1v_1=A_2v_2=Q_2\\
+    \frac{v_1}{v_2} = \left(\frac{D_2}{D_1}\right)^2
+\end{align*}
+
+
+\header{Bernoulli's Equation}
+\begin{align*}
+    z_1 +\frac{P_1}{\gamma} + \frac{v_1^2}{2g} + H_p-H_m-H_L =z_2 +\frac{P_2}{\gamma} + \frac{v_2^2}{2g} 
+\end{align*}
+\begin{conditions}
+    H_p & pump head\\
+    H_L & head loss\\
+    H_m & motor head
+\end{conditions}
+Pump Head
+\begin{align*}
+    H_p\units{ft} = \frac{3950 \times (HHP)}{Q\units{gpm}\times SG}
+\end{align*}

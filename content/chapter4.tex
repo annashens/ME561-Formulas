@@ -1,0 +1,49 @@
+\sectiontitle{Chapter 4}
+
+\header{Reynolds Number}
+\begin{align*}
+    Re = \frac{\rho v D_h}{\mu} = \frac{vD}{\nu}
+\end{align*}
+\begin{conditions}
+    D_h & $\frac{4\times \text{cross section area}}{\text{wet perimeter}},$ hydraulic diameter\\
+    v & velocity
+\end{conditions}
+\begin{enumerate}
+    \item $Re < 2000$ Laminar flow
+    \item $Re > 4000$ Turbulent flow
+    \item $2000< Re < 4000$ Critical flow
+\end{enumerate}
+\header{Darcy Friction}
+\begin{align*}
+    H_L = f\left(\frac{L}{D}\right)\left(\frac{v^2}{2g}\right)
+\end{align*}
+\begin{conditions}
+    f&friction factor (dimensionless)\\
+    L&pipe length, $\units{ft,\ m}$\\
+    D&pipe diameter, $\units{ft,\ m}$\\
+    v&average fluid velocity, $\units{\frac{ft}{s},\ \frac{m}{s}}$\\
+    g& gravitational acceleration$\units{\frac{ft}{s^2},\ \frac{m}{s^2}}$
+\end{conditions}
+\begin{enumerate}
+    \item Laminar Flow
+    \begin{equation*}
+        f=\frac{64}{Re}
+    \end{equation*}
+    \item Turbluent flow
+    \begin{equation*}
+        \text{relative roughness} = \frac{\epsilon}{D}
+    \end{equation*}
+    \begin{itemize}
+        \item Use reynolds number and relative roughness to identify $f$ on moody chart
+     \end{itemize}
+     
+\end{enumerate}
+
+\header{Losses in Valves and Fittings}
+\begin{equation*}
+    H_L = K\left(\frac{v^2}{2g}\right)
+\end{equation*}
+Equivalent Length Method
+\begin{equation*}
+    L_e = \frac{K D}{f}
+\end{equation*}

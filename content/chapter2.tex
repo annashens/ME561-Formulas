@@ -1,0 +1,104 @@
+%------------ Header ----------------
+\sectiontitle{Chapter 2}
+
+Density
+\begin{equation*}
+    \rho = \frac{m}{\volume}
+\end{equation*} 
+Specific Weight
+\begin{align*}
+    \gamma = \frac{mg}{\volume} = \rho g
+\end{align*}
+
+Specific Gravity
+\begin{align*}
+    SG_x = \frac{\gamma_x}{\gamma_{water}}
+\end{align*}
+
+\header{Pressure}
+\begin{align*}
+    p = \frac{F}{A}
+\end{align*}
+Pressure Head
+\begin{align*}
+    \Delta p = -\rho g \Delta h = -\gamma \Delta h
+\end{align*}
+\begin{itemize}
+    \item differential form: $dp = -\gamma dy$
+\end{itemize}
+\begin{enumerate}
+    \item incompressible fluid ($\rho=cte \ \Rightarrow \ \gamma=cte$), isothermal ($T=const$)
+    \begin{align*}
+        P_2 - P_1 = -\gamma(z_2-z_1)
+    \end{align*}
+    \item compressible fluid ($\rho \neq cte$), ideal gas ($P\volume = \rho R_s T$), isothermal
+    \begin{align*}
+        \ln (p_2-p_1) = -\left(\frac{g}{R_sT}\right)(z_2-z_1)\\
+        p_2 = p_1 e^{\left[-\left(\frac{g}{R_sT}\right)(z_2-z_1)\right]}
+    \end{align*}
+    \item compressible fluid ($\rho \neq cte$), ideal gas ($P\volume = \rho R_s T$), non-isothermal ($T  = T_{0} - \beta z$)
+    \begin{align*}
+        p_2 = p_1\left[\frac{T_0 - \beta z_2}{T_0 - \beta z_1}\right]^{\left(\frac{g}{R_s \beta}\right)}
+    \end{align*}
+\end{enumerate}
+
+Note that we should always use absolute pressure in calculations
+\begin{align*}
+        P_{gage} = P_{abs} - P_{atm} &\text{ when } P_{abs} > P_{atm}\\
+        P_{vac} = P_{atm} - P_{abs} &\text{ when } P_{abs} < P_{atm}
+\end{align*}
+\header{Bulk Modulus}
+\begin{itemize}
+    \item Note compressibility coeff. $\psi \xlongequal{} \frac{1}{V}\frac{d\volume}{dp} \ \left[\frac{1}{\text{pressure unit}}\right]$
+\end{itemize}
+\begin{conditions}
+    \psi & $\frac{1}{V}\frac{d\volume}{dp}$, compressibility coeff. $\left[\frac{1}{\text{pressure unit}}\right]$\\
+    \beta & $\frac{1}{\psi}$, bulk modulus
+\end{conditions}
+\begin{align*}
+    \beta = -\frac{dp}{\frac{d\volume}{\volume}} = + \frac{dp}{\frac{d\rho}{\rho}}, \hspace{5pt}\text{ when mass const}
+\end{align*}
+\begin{align*}
+\end{align*}
+\header{Viscosity}
+Absolute/Dynamic Viscosity
+\begin{align*}
+    \mu = \frac{\tau}{\frac{\partial u}{\partial y}}
+\end{align*}
+
+\begin{conditions}
+    \mu & absolute/dynamic viscosity $\units{\frac{N\cdot s}{m}}$\\
+    \tau & shear stress\\
+    \frac{\partial u}{\partial y} & shear rate
+\end{conditions}
+Viscosity Index
+\begin{align*}
+    VI = \frac{L-U}{L-H}\times 100
+\end{align*}
+\begin{conditions}
+    L & viscosity of 0-VI oil at $40\degree C$\\
+    U & viscosity of unknown oil at $40\degree C$\\
+    H & viscosity of 100-VI oil at $40\degree C$
+\end{conditions}
+Kinematic Viscosity
+\begin{equation*}
+    \nu = \frac{\mu}{\rho}\hspace{10pt} \units{\frac{mm^2}{s}=cS}
+\end{equation*}
+\[   \nu(cS)=\left\{
+\begin{array}{ll}
+      0.226t-\frac{195}{t}, & t\leq 100\ SUS\\
+      0.220t-\frac{135}{t}, & t> 100\ SUS\\
+\end{array} 
+\right. \] 
+\begin{conditions}
+    t& viscosity measured in units of SUS 
+\end{conditions}
+\begin{equation*}
+    \nu(cS)=\frac{\mu(cP)}{SG}
+\end{equation*}
+ 
+
+\header{Flowrate ($Q$)}
+\begin{align*}
+    Q= \frac{V}{t}=v\cdot A \hspace{10pt}\units{\frac{m^3}{s}}
+\end{align*}

@@ -1,0 +1,95 @@
+
+\documentclass{article}
+\usepackage[letterpaper, margin=1cm]{geometry}
+\usepackage{url}
+\usepackage{multicol}
+\usepackage{amsmath}
+\usepackage{esint}
+\usepackage{amsfonts}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+%added on 
+\usepackage[document]{ragged2e}
+\usepackage{colortbl}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{mathtools}
+\usepackage{amsmath,amssymb,gensymb}
+\usepackage{enumitem}
+\usepackage{ mathrsfs }
+\usepackage{extarrows}
+\usepackage[utf8]{inputenc}
+
+% Remove List Spacing
+\newcommand{\header}[1]{\vspace{5pt}\textbf{\emph{#1}}\\ }
+\setlist{leftmargin =.7cm,noitemsep}
+
+\newenvironment{conditions}{\par\vspace{\abovedisplayskip}\noindent\begin{tabular}{>{$}l<{$} @{${}={}$} l}}
+  {\end{tabular}\par\vspace{\belowdisplayskip}}
+
+\renewcommand{\arraystretch}{1.25}
+% --------------- Custom Commands-------------------
+\newcommand{\Lim}[1]{\raisebox{0.5ex}{\scalebox{0.8}{$\displaystyle \lim_{#1}\;$}}}
+\newcommand{\adj}{\text{adj}\hspace{2pt}}
+\newcommand{\mtrx}[1]{\textbf{#1}}
+\newcommand{\inverse}{^{-1}}
+\usepackage{tikz}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+
+%2line table
+%special cell
+\newcommand{\specialcell}[2][c]{%
+  \begin{tabular}[#1]{@{}c@{}}#2\end{tabular}}
+
+% matrix majik
+\makeatletter
+\renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
+    \hskip -\arraycolsep
+    \let\@ifnextchar\new@ifnextchar
+    \array{#1}}
+\makeatother
+% Laplace
+\newcommand{\Laplace}{\mathcal{L}}
+\newcommand{\real}[1]{\operatorname{Re}({#1})}
+\newcommand{\lt}{\mathcal{L}}
+% Evaluate At 
+\newcommand*\Eval[3]{\left.#1\right\rvert_{#2}^{#3}}
+% integration
+\newcommand{\integrate}{\displaystyle\int}
+% summation
+\newcommand{\summate}{\sum\limits}
+% Center equations
+\newcommand{\centerEqn}[1]{\begin{center}\vspace{-5pt} #1 \vspace{-5pt}\end{center}}
+% center line
+\newcommand{\hr}{\centerline{\rule{3.5in}{1pt}}}
+% centered image
+\newcommand*\addimage[2]{\vspace{-8pt}\begin{center}
+    \includegraphics[width=#1in]{images/#2}\end{center}\vspace{-8pt}}
+\newcommand{\sectiontitle}[1]{\paragraph{#1} \ \\} 
+
+\newcommand{\volume}{{\ooalign{\hfil$V$\hfil\cr\kern0.08em--\hfil\cr}}}
+\newcommand{\units}[1]{\left[{#1}\right]} 
+\begin{document}
+\pagenumbering{gobble}
+
+
+\begin{center}
+    {\large{\textbf{ME561 Formulas}}\\
+\end{center}
+\begin{multicols*}{2}
+
+
+%------------ Content ---------------
+\footnotesize{
+
+\input{content/chapter1}
+\input{content/chapter2}
+\input{content/chapter3}
+\input{content/chapter4}
+\input{content/chapter5}
+}
+\end{multicols*}
+
+\end{document}
+
+
