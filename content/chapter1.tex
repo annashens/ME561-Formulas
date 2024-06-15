@@ -1,2 +1,167 @@
-%------------ Header ----------------
-% \sectiontitle{Chapter 1}
+
+% %------------ Header ----------------
+\sectiontitle{Chapter 1 Basics of Hydraulics}
+
+Density
+\begin{equation*}
+    \rho = \frac{m}{\volume}
+\end{equation*} 
+Specific Weight
+\begin{align*}
+    \gamma = \frac{mg}{\volume} = \rho g
+\end{align*}
+
+Specific Gravity
+\begin{align*}
+    SG_x = \frac{\gamma_x}{\gamma_{water}}
+\end{align*}
+
+\header{Pressure}
+\begin{align*}
+    p = \frac{F}{A}
+\end{align*}
+Pressure Head
+\begin{align*}
+    \Delta p = -\rho g \Delta h = -\gamma \Delta h
+\end{align*}
+\begin{itemize}
+    \item differential form: $dp = -\gamma dy$
+\end{itemize}
+\begin{enumerate}
+    \item incompressible fluid ($\rho=cte \ \Rightarrow \ \gamma=cte$), isothermal ($T=const$)
+    \begin{align*}
+        P_2 - P_1 = -\gamma(z_2-z_1)
+    \end{align*}
+    \item compressible fluid ($\rho \neq cte$), ideal gas ($P\volume = \rho R_s T$), isothermal
+    \begin{align*}
+        \ln (p_2-p_1) = -\left(\frac{g}{R_sT}\right)(z_2-z_1)\\
+        p_2 = p_1 e^{\left[-\left(\frac{g}{R_sT}\right)(z_2-z_1)\right]}
+    \end{align*}
+    \item compressible fluid ($\rho \neq cte$), ideal gas ($P\volume = \rho R_s T$), non-isothermal ($T  = T_{0} - \beta z$)
+    \begin{align*}
+        p_2 = p_1\left[\frac{T_0 - \beta z_2}{T_0 - \beta z_1}\right]^{\left(\frac{g}{R_s \beta}\right)}
+    \end{align*}
+\end{enumerate}
+
+Note that we should always use absolute pressure in calculations
+\begin{align*}
+        P_{gage} = P_{abs} - P_{atm} &\text{ when } P_{abs} > P_{atm}\\
+        P_{vac} = P_{atm} - P_{abs} &\text{ when } P_{abs} < P_{atm}
+\end{align*}
+\header{Bulk Modulus}
+\begin{itemize}
+    \item Note compressibility coeff. $\psi \xlongequal{} \frac{1}{V}\frac{d\volume}{dp} \ \left[\frac{1}{\text{pressure unit}}\right]$
+\end{itemize}
+\begin{conditions}
+    \psi & $\frac{1}{V}\frac{d\volume}{dp}$, compressibility coeff. $\left[\frac{1}{\text{pressure unit}}\right]$\\
+    \beta & $\frac{1}{\psi}$, bulk modulus
+\end{conditions}
+\begin{align*}
+    \beta = -\frac{dp}{\frac{d\volume}{\volume}} = + \frac{dp}{\frac{d\rho}{\rho}}, \hspace{5pt}\text{ when mass const}
+\end{align*}
+\begin{align*}
+\end{align*}
+\header{Viscosity}
+Absolute/Dynamic Viscosity
+\begin{align*}
+    \mu = \frac{\tau}{\frac{\partial u}{\partial y}}
+\end{align*}
+
+\begin{conditions}
+    \mu & absolute/dynamic viscosity $\units{\frac{N\cdot s}{m}}$\\
+    \tau & shear stress\\
+    \frac{\partial u}{\partial y} & shear rate
+\end{conditions}
+Viscosity Index
+\begin{align*}
+    VI = \frac{L-U}{L-H}\times 100
+\end{align*}
+\begin{conditions}
+    L & viscosity of 0-VI oil at $40\degree C$\\
+    U & viscosity of unknown oil at $40\degree C$\\
+    H & viscosity of 100-VI oil at $40\degree C$
+\end{conditions}
+Kinematic Viscosity
+\begin{equation*}
+    \nu = \frac{\mu}{\rho}\hspace{10pt} \units{\frac{mm^2}{s}=cS}
+\end{equation*}
+\[   \nu(cS)=\left\{
+\begin{array}{ll}
+      0.226t-\frac{195}{t}, & t\leq 100\ SUS\\
+      0.220t-\frac{135}{t}, & t> 100\ SUS\\
+\end{array} 
+\right. \] 
+\begin{conditions}
+    t& viscosity measured in units of SUS 
+\end{conditions}
+\begin{equation*}
+    \nu(cS)=\frac{\mu(cP)}{SG}
+\end{equation*}
+ 
+
+\header{Flowrate ($Q$)}
+\begin{align*}
+    Q= \frac{V}{t}=v\cdot A \hspace{10pt}\units{\frac{m^3}{s}}
+\end{align*}
+\sectiontitle{Chapter 1}
+
+
+% \sectiontitle{Chapter 2}
+\header{Energy}
+\begin{align*}
+    E_{total} &= PE + KE =  \underbrace{\frac{1}{2}mv^2}_{KE} + \overbrace{mgZ}^{PE_{elev}} + \underbrace{mg\frac{p}{\gamma}}_{PE_{pres}}
+\end{align*}
+\header{Power}
+\begin{align*}
+    power = \frac{F \cdot d}{t}=Fv
+\end{align*} 
+\begin{conditions}
+    F & force, $\units{lbf}$\\
+    d & distance $\units{in,\ ft}$\\
+    t & time $\units{s}$\\
+    v & velocity $\units{\frac{in}{s},\ \frac{ft}{s}}$
+\end{conditions}
+\header{Horsepower}
+Linear
+\begin{equation*}
+    HP = \frac{F\units{lb}\times v\units{\frac{ft}{s}}}{550}=\frac{F\units{lb}\times v\units{\frac{ft}{min}}}{33,000}
+\end{equation*}
+Angular
+\begin{equation*}
+    HP = \frac{T\units{in\cdot lb} \times N \units{rpm}}{63,000}
+\end{equation*}
+Hydraulic
+\begin{equation*}
+    HHP = \frac{2\units{\frac{lb}{ft^2}}\times Q\units{\frac{ft^3}{s}}}{550} = \frac{P\units{psi}\times Q\units{gpm}}{1714}=\frac{\text{pump hydraulic power }\units{W}}{\gamma\units{\frac{N}{m^3}}\times Q\units{\frac{m^3}{s}}}
+\end{equation*}
+\header{Pascal's Law}
+Pressure applied to a confined fluid is transmitted undiminished in all directions throughout the fluid and acts perpendicular to the surfaces in contact with the fluid
+\begin{align*}
+    \frac{F_1}{A_1}=\frac{F_2}{A_2}
+\end{align*}
+\header{Continuity Equation}
+For steady flow in a pipeline, the weight flow rate is the same for all locations of the pipe.\
+\begin{align*}
+    \dot{w}_1 &= \dot{w}_2\\
+    \gamma_1 A_1 v_1 &= \gamma_2 A_2 v_2\\
+\end{align*}
+If $\rho_1=\rho_2$ or $\gamma_1=\gamma_2$, then $A_1 v_1 = A_2v_2 = Q$
+\begin{align*}
+    Q_1 = A_1v_1=A_2v_2=Q_2\\
+    \frac{v_1}{v_2} = \left(\frac{D_2}{D_1}\right)^2
+\end{align*}
+
+
+\header{Bernoulli's Equation}
+\begin{align*}
+    z_1 +\frac{P_1}{\gamma} + \frac{v_1^2}{2g} + H_p-H_m-H_L =z_2 +\frac{P_2}{\gamma} + \frac{v_2^2}{2g} 
+\end{align*}
+\begin{conditions}
+    H_p & pump head\\
+    H_L & head loss\\
+    H_m & motor head
+\end{conditions}
+Pump Head
+\begin{align*}
+    H_p\units{ft} = \frac{3950 \times (HHP)}{Q\units{gpm}\times SG}
+\end{align*}

@@ -1,59 +1,81 @@
-\sectiontitle{Chapter 3}
-\header{Energy}
+\sectiontitle{Chapter 3: Hydraulic Pumps}
 \begin{align*}
-    E_{total} &= PE + KE =  \underbrace{\frac{1}{2}mv^2}_{KE} + \overbrace{mgZ}^{PE_{elev}} + \underbrace{mg\frac{p}{\gamma}}_{PE_{pres}}
+    Q = V_D \cdot N
 \end{align*}
-\header{Power}
 \begin{align*}
-    power = \frac{F \cdot d}{t}=Fv
-\end{align*} 
-\begin{conditions}
-    F & force, $\units{lbf}$\\
-    d & distance $\units{in,\ ft}$\\
-    t & time $\units{s}$\\
-    v & velocity $\units{\frac{in}{s},\ \frac{ft}{s}}$
-\end{conditions}
-\header{Horsepower}
-Linear
-\begin{equation*}
-    HP = \frac{F\units{lb}\times v\units{\frac{ft}{s}}}{550}=\frac{F\units{lb}\times v\units{\frac{ft}{min}}}{33,000}
-\end{equation*}
-Angular
-\begin{equation*}
-    HP = \frac{T\units{in\cdot lb} \times N \units{rpm}}{63,000}
-\end{equation*}
-Hydraulic
-\begin{equation*}
-    HHP = \frac{2\units{\frac{lb}{ft^2}}\times Q\units{\frac{ft^3}{s}}}{550} = \frac{P\units{psi}\times Q\units{gpm}}{1714}=\frac{\text{pump hydraulic power }\units{W}}{\gamma\units{\frac{N}{m^3}}\times Q\units{\frac{m^3}{s}}}
-\end{equation*}
-\header{Pascal's Law}
-Pressure applied to a confined fluid is transmitted undiminished in all directions throughout the fluid and acts perpendicular to the surfaces in contact with the fluid
-\begin{align*}
-    \frac{F_1}{A_1}=\frac{F_2}{A_2}
-\end{align*}
-\header{Continuity Equation}
-For steady flow in a pipeline, the weight flow rate is the same for all locations of the pipe.\
-\begin{align*}
-    \dot{w}_1 &= \dot{w}_2\\
-    \gamma_1 A_1 v_1 &= \gamma_2 A_2 v_2\\
-\end{align*}
-If $\rho_1=\rho_2$ or $\gamma_1=\gamma_2$, then $A_1 v_1 = A_2v_2 = Q$
-\begin{align*}
-    Q_1 = A_1v_1=A_2v_2=Q_2\\
-    \frac{v_1}{v_2} = \left(\frac{D_2}{D_1}\right)^2
-\end{align*}
-
-
-\header{Bernoulli's Equation}
-\begin{align*}
-    z_1 +\frac{P_1}{\gamma} + \frac{v_1^2}{2g} + H_p-H_m-H_L =z_2 +\frac{P_2}{\gamma} + \frac{v_2^2}{2g} 
+    Q\units{\frac{in^3}{min}} &= V_D \units{\frac{in^3}{rev}}\cdot N\units{\frac{rev}{min}}\\
+    Q\units{gpm} &= \frac{V_D \units{\frac{in^3}{rev}}\cdot N\units{\frac{rev}{min}}}{231}
 \end{align*}
 \begin{conditions}
-    H_p & pump head\\
-    H_L & head loss\\
-    H_m & motor head
+    V_D & volumetric displacement of pump, $\units{\frac{m^3}{min}}$ or $\units{\frac{in^3}{min}}$\\
+    N & rpm (i.e. rotational speed)
 \end{conditions}
-Pump Head
+\header{Pump Performance}
+\begin{enumerate}
+    \item Volumetric Efficiency
+    \begin{equation*}
+        \eta_v =\frac{Q_A}{Q_T}
+    \end{equation*}
+    \begin{conditions}
+        Q_T & theoretical flow rate, $\units{\frac{m^3}{min}}$ or $\units{\frac{in^3}{rev}}$\\
+        Q_A & actual flow rate
+    \end{conditions}
+    \item Mechanical Efficiency
+    \begin{align*}
+        \eta_m = \frac{power_{out}}{power_{pump}} = \frac{P\cdot Q_T}{T_A \cdot \omega} = \frac{T_T}{T_A}
+    \end{align*}
+    \begin{conditions}
+        Q_T & theoretical flow rate\\
+        P & pump discharge pressure \\
+        \omega & pump speed, $\units{\frac{rad}{s}}$\\
+        T_T & theoretical torque required to operate pump\\
+        T_A & actual torque delivered to pump
+    \end{conditions}    
+    \item Overall Efficiency
+    \begin{align*}
+        \eta_o = \eta_m \eta_v
+    \end{align*}
+\end{enumerate}
+
+\header{Gear Pumps}
+External Gear Pumps
+\begin{equation*}
+    V_D = \frac{\pi}{4}\left(D_o^2 - D_i^2\right)L
+\end{equation*}
+\begin{conditions}
+    D_o & outer diameter\\
+    D_i & inner diameter\\
+    L & width of gear teeth
+\end{conditions}
+\header{Vane Pumps}
 \begin{align*}
-    H_p\units{ft} = \frac{3950 \times (HHP)}{Q\units{gpm}\times SG}
+    e_{max} = \frac{D_C-D_R}{2}
 \end{align*}
+\begin{align*}
+    V_{D,max} = \frac{\pi}{4}\left(D_C+D_R\right)(2e_{max})L
+\end{align*}
+\begin{align*}
+    V_D = \frac{\pi}{2}\left(D_C+D_R'\right)\cdot e\cdot L
+\end{align*}
+\begin{conditions}
+    D_C & diameter of cam ring\\
+    D_R & diameter of rotor\\
+    D_R' & virtual diameter of rotor\\
+    L & length of rotor \\
+    e & eccentricity (caused by the offset of the cam and rotor)\\
+\end{conditions}
+\header{Piston Pump}
+\begin{align*}
+    V_D = Y\cdot A \cdot S = Y\cdot A \cdot D \cdot \tan \theta
+\end{align*}
+\begin{align*}
+    Q_T = D \cdot A \cdot N \cdot Y \cdot \tan \theta
+\end{align*}
+\begin{conditions}
+    \theta & offset angle \\
+    S & piston stroke \\
+    A & piston area \\
+    Y & \# pistons \\
+    L & swashplate length \\
+    D & portplate diameter \\
+\end{conditions}

@@ -1,104 +1,49 @@
-%------------ Header ----------------
-\sectiontitle{Chapter 2}
+\sectiontitle{Chapter 2: Frictional Losses in Hydraulic Systems}
 
-Density
-\begin{equation*}
-    \rho = \frac{m}{\volume}
-\end{equation*} 
-Specific Weight
+\header{Reynolds Number}
 \begin{align*}
-    \gamma = \frac{mg}{\volume} = \rho g
+    Re = \frac{\rho v D_h}{\mu} = \frac{vD}{\nu}
 \end{align*}
-
-Specific Gravity
-\begin{align*}
-    SG_x = \frac{\gamma_x}{\gamma_{water}}
-\end{align*}
-
-\header{Pressure}
-\begin{align*}
-    p = \frac{F}{A}
-\end{align*}
-Pressure Head
-\begin{align*}
-    \Delta p = -\rho g \Delta h = -\gamma \Delta h
-\end{align*}
-\begin{itemize}
-    \item differential form: $dp = -\gamma dy$
-\end{itemize}
+\begin{conditions}
+    D_h & $\frac{4\times \text{cross section area}}{\text{wet perimeter}},$ hydraulic diameter\\
+    v & velocity
+\end{conditions}
 \begin{enumerate}
-    \item incompressible fluid ($\rho=cte \ \Rightarrow \ \gamma=cte$), isothermal ($T=const$)
-    \begin{align*}
-        P_2 - P_1 = -\gamma(z_2-z_1)
-    \end{align*}
-    \item compressible fluid ($\rho \neq cte$), ideal gas ($P\volume = \rho R_s T$), isothermal
-    \begin{align*}
-        \ln (p_2-p_1) = -\left(\frac{g}{R_sT}\right)(z_2-z_1)\\
-        p_2 = p_1 e^{\left[-\left(\frac{g}{R_sT}\right)(z_2-z_1)\right]}
-    \end{align*}
-    \item compressible fluid ($\rho \neq cte$), ideal gas ($P\volume = \rho R_s T$), non-isothermal ($T  = T_{0} - \beta z$)
-    \begin{align*}
-        p_2 = p_1\left[\frac{T_0 - \beta z_2}{T_0 - \beta z_1}\right]^{\left(\frac{g}{R_s \beta}\right)}
-    \end{align*}
+    \item $Re < 2000$ Laminar flow
+    \item $Re > 4000$ Turbulent flow
+    \item $2000< Re < 4000$ Critical flow
+\end{enumerate}
+\header{Darcy Friction}
+\begin{align*}
+    H_L = f\left(\frac{L}{D}\right)\left(\frac{v^2}{2g}\right)
+\end{align*}
+\begin{conditions}
+    f&friction factor (dimensionless)\\
+    L&pipe length, $\units{ft,\ m}$\\
+    D&pipe diameter, $\units{ft,\ m}$\\
+    v&average fluid velocity, $\units{\frac{ft}{s},\ \frac{m}{s}}$\\
+    g& gravitational acceleration$\units{\frac{ft}{s^2},\ \frac{m}{s^2}}$
+\end{conditions}
+\begin{enumerate}
+    \item Laminar Flow
+    \begin{equation*}
+        f=\frac{64}{Re}
+    \end{equation*}
+    \item Turbluent flow
+    \begin{equation*}
+        \text{relative roughness} = \frac{\epsilon}{D}
+    \end{equation*}
+    \begin{itemize}
+        \item Use reynolds number and relative roughness to identify $f$ on moody chart
+     \end{itemize}
+     
 \end{enumerate}
 
-Note that we should always use absolute pressure in calculations
-\begin{align*}
-        P_{gage} = P_{abs} - P_{atm} &\text{ when } P_{abs} > P_{atm}\\
-        P_{vac} = P_{atm} - P_{abs} &\text{ when } P_{abs} < P_{atm}
-\end{align*}
-\header{Bulk Modulus}
-\begin{itemize}
-    \item Note compressibility coeff. $\psi \xlongequal{} \frac{1}{V}\frac{d\volume}{dp} \ \left[\frac{1}{\text{pressure unit}}\right]$
-\end{itemize}
-\begin{conditions}
-    \psi & $\frac{1}{V}\frac{d\volume}{dp}$, compressibility coeff. $\left[\frac{1}{\text{pressure unit}}\right]$\\
-    \beta & $\frac{1}{\psi}$, bulk modulus
-\end{conditions}
-\begin{align*}
-    \beta = -\frac{dp}{\frac{d\volume}{\volume}} = + \frac{dp}{\frac{d\rho}{\rho}}, \hspace{5pt}\text{ when mass const}
-\end{align*}
-\begin{align*}
-\end{align*}
-\header{Viscosity}
-Absolute/Dynamic Viscosity
-\begin{align*}
-    \mu = \frac{\tau}{\frac{\partial u}{\partial y}}
-\end{align*}
-
-\begin{conditions}
-    \mu & absolute/dynamic viscosity $\units{\frac{N\cdot s}{m}}$\\
-    \tau & shear stress\\
-    \frac{\partial u}{\partial y} & shear rate
-\end{conditions}
-Viscosity Index
-\begin{align*}
-    VI = \frac{L-U}{L-H}\times 100
-\end{align*}
-\begin{conditions}
-    L & viscosity of 0-VI oil at $40\degree C$\\
-    U & viscosity of unknown oil at $40\degree C$\\
-    H & viscosity of 100-VI oil at $40\degree C$
-\end{conditions}
-Kinematic Viscosity
+\header{Losses in Valves and Fittings}
 \begin{equation*}
-    \nu = \frac{\mu}{\rho}\hspace{10pt} \units{\frac{mm^2}{s}=cS}
+    H_L = K\left(\frac{v^2}{2g}\right)
 \end{equation*}
-\[   \nu(cS)=\left\{
-\begin{array}{ll}
-      0.226t-\frac{195}{t}, & t\leq 100\ SUS\\
-      0.220t-\frac{135}{t}, & t> 100\ SUS\\
-\end{array} 
-\right. \] 
-\begin{conditions}
-    t& viscosity measured in units of SUS 
-\end{conditions}
+Equivalent Length Method
 \begin{equation*}
-    \nu(cS)=\frac{\mu(cP)}{SG}
+    L_e = \frac{K D}{f}
 \end{equation*}
- 
-
-\header{Flowrate ($Q$)}
-\begin{align*}
-    Q= \frac{V}{t}=v\cdot A \hspace{10pt}\units{\frac{m^3}{s}}
-\end{align*}
